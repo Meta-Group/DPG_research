@@ -31,7 +31,13 @@ import sys
 # Ensure repo root is on sys.path (DPG root, not counterfactual)
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 COUNTERFACTUAL_ROOT = pathlib.Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO_ROOT))
+# Add parent of REPO_ROOT so Python can find 'DPG_research' as a package
+REPO_PARENT = REPO_ROOT.parent
+sys.path.insert(0, str(REPO_PARENT))  # Add /root/gitgud so 'DPG_research' is findable
+sys.path.insert(0, str(COUNTERFACTUAL_ROOT))
+# Add DPG paths so 'from dpg import ...' and 'from metrics import ...' work
+# Must add the parent of 'dpg' (i.e., DPG/) not 'dpg' itself
+sys.path.insert(0, str(REPO_ROOT / "DPG"))
 sys.path.insert(0, str(COUNTERFACTUAL_ROOT))
 
 import os
