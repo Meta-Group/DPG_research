@@ -1,0 +1,69 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# === Virtual environments ===
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# === Jupyter Notebooks ===
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# === Data & datasets ===
+datasets/
+# Exception: keep the DPG submodule's datasets
+# DPG/datasets/
+
+# === Outputs & results ===
+outputs/
+wandb/
+*.csv
+*.tsv
+*.json
+*.pkl
+*.png
+*.pdf
+*.log
+
+# === Configuration ===
+# Keep config files but ignore local overrides
+configs/local/
+*.local.yaml
+*.local.yml
+
+# === IDE / OS ===
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# === Weights & Biases ===
+# wandb/ - already untracked above
+
+# === Temporary files ===
+temp/
+*.tmp
+*.bak
